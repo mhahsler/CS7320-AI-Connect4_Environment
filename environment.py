@@ -96,8 +96,8 @@ def truly_dynamic_environment(players,size=(6,7),visual=False,board=None):
         board = empty_board(shape=size)
     turn_num = 0
     result['algo_info'] = {
-        players[0]['algo'].__name__:{'time':[]},
-        players[1]['algo'].__name__:{'time':[]}
+        players[0]['name']:{'time':[]},
+        players[1]['name']:{'time':[]}
         }
     result['algo_info']
     past_boards = []
@@ -109,18 +109,17 @@ def truly_dynamic_environment(players,size=(6,7),visual=False,board=None):
         end = timer()
         board = HelperFunctions.place(choice,board,player=players[player_turn]['player'])
         if visual: 
-            # print(f"Utility for {players[player_turn]['algo'].__name__}: {HelperFunctions.evaluate_board(board,player=player_turn)}")
             visualize(board)
             clear_output(wait=True)
-        result['algo_info'][players[player_turn]['algo'].__name__]['time'].append((end - start) * 1000)
+        result['algo_info'][players[player_turn]['name']]['time'].append((end - start) * 1000)
         past_boards.append(board)
         turn_num += 1
     result['winner'] = HelperFunctions.check_win(board)
     result['turns_taken'] = turn_num
     for name in result['algo_info']:
-        print(f"{name} Took a total of: {round(np.sum(result['algo_info'][name]['time'])/ 1000,2)} seconds")
+        print(f"{name} took a total of {round(np.sum(result['algo_info'][name]['time'])/ 1000,3)} seconds")
     
-    print(f"Winner is {result['winner']}")
+    print(f"The winner is {players[(result['winner']-1)//-2]['name']} ({result['winner']})")
     print(f"Turns Taken: {turn_num}")
     
     return result,board,past_boards
