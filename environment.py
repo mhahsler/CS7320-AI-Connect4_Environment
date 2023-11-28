@@ -105,7 +105,7 @@ def truly_dynamic_environment(players,size=(6,7),visual=False,board=None):
         player_turn = turn_num % 2
         
         start = timer()
-        choice = players[player_turn]['algo'](board,**players[player_turn]['args'])['move']
+        choice = players[player_turn]['algo'](board,player_turn*2-1, **players[player_turn]['args'])
         end = timer()
         board = HelperFunctions.place(choice,board,player=players[player_turn]['player'])
         if visual: 
@@ -119,6 +119,10 @@ def truly_dynamic_environment(players,size=(6,7),visual=False,board=None):
     result['turns_taken'] = turn_num
     for name in result['algo_info']:
         print(f"{name} Took a total of: {round(np.sum(result['algo_info'][name]['time'])/ 1000,2)} seconds")
+    
+    print(f"Winner is {result['winner']}")
+    print(f"Turns Taken: {turn_num}")
+    
     return result,board,past_boards
 
 def replay(all_boards,sleep_time:int=1):
