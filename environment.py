@@ -119,7 +119,11 @@ def truly_dynamic_environment(players,size=(6,7),visual=False,board=None):
     for name in result['algo_info']:
         print(f"{name} took a total of {round(np.sum(result['algo_info'][name]['time'])/ 1000,3)} seconds")
     
-    print(f"The winner is {players[(result['winner']-1)//-2]['name']} ({result['winner']})")
+    if result["winner"] is not None:
+        print(f"The winner is {players[(result['winner']-1)//-2]['name']} ({result['winner']})")
+    else:
+        print("The game ended in a draw")
+
     print(f"Turns Taken: {turn_num}")
     
     return result,board,past_boards
