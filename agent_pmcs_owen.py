@@ -49,7 +49,7 @@ class PMCSAgent:
         """check is a state is terminal and return the utility if it is. None means not a terminal mode."""
         goal = self.check_win(s)        
         if goal == player: return 1
-        if goal == 3: return 0  
+        if goal == 0: return 0  
         if goal == -1 * player: return -1  # loss is failure
         return None # continue
 
