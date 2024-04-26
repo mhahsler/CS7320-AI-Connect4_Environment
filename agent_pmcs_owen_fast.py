@@ -1,12 +1,10 @@
 import math
 import numpy as np
 from scipy.signal import convolve2d
-from scipy.special import softmax
 import random
 
-ROW, COL = 6, 7
 
-class PMCSAgent:
+class FastPMCSAgent:
     def __init__(self, inc = 1000):
         horizontal_kernel = np.array([[1, 1, 1, 1]])
         vertical_kernel = np.transpose(horizontal_kernel)
@@ -15,6 +13,7 @@ class PMCSAgent:
         self.detection_kernels = [horizontal_kernel,
                                 vertical_kernel, diag1_kernel, diag2_kernel]
         self.inc = inc
+        self.ROW, self.COL = 6, 7
             
     def playout(self, state, action, player = 1):
         """Perfrom a random playout starting with the given action on the given board 
@@ -24,28 +23,28 @@ class PMCSAgent:
         action_keys = self.action_keys.copy()
 
         num_discs = self.num_discs
-        #action_history = []
+        action_history = []
         current_player = player
         while(True):
             state[action_dict[action]-1, action] = current_player
             num_discs += 1
-            #action_history.append(action)
+            action_history.append(action)
             # reached terminal state?
             if num_discs >= 7:
-                #tuple_action_history = state.tobytes()
-                # if tuple_action_history in self.cache:
-                #     u = self.cache[tuple_action_history]
-                # else:
-                u = 0
-                for kernel in self.detection_kernels:
-                    a = convolve2d(state, kernel, mode='valid')
-                    if ((a == 4).any()):
-                        u = 1 if player == 1 else -1
-                        break
-                    if ((a == -4).any()):
-                        u = 1 if player == -1 else -1
-                        break
-                    #self.cache[tuple_action_history] = u
+                state_bytes = state.tobytes()
+                if state_bytes in self.cache:
+                    u = self.cache[state_bytes]
+                else:
+                    u = 0
+                    for kernel in self.detection_kernels:
+                        a = convolve2d(state, kernel, mode='valid')
+                        if ((a == 4).any()):
+                            u = 1 if player == 1 else -1
+                            break
+                        if ((a == -4).any()):
+                            u = 1 if player == -1 else -1
+                            break
+                        self.cache[state_bytes] = u
     
                 if u != 0 or num_discs == 42:
                     return u
@@ -69,39 +68,32 @@ class PMCSAgent:
         The N playouts are evenly divided between the possible actions."""
         
         self.num_discs = len(np.where(board != 0)[0])
+        if self.num_discs <= 1:
+            self.cache = {} # reset at each game starts
+    
         if self.num_discs == 0:
             return 3
         
         N = (self.num_discs+1) * self.inc
         
         self.action_dict = {}
-        for col in range(COL):
+        for col in range(self.COL):
             num_zeros = len(np.where(board[:, col] == 0)[0])
             if num_zeros == 0:
                 continue
             self.action_dict[col] = num_zeros
         self.action_keys = list(self.action_dict)
         
-        n = math.floor(N/COL)
-        #self.cache = {}
-        ps = [[i, np.mean(self.playouts(board, i, player, N = n))] for i in self.action_dict]
+        n = math.floor(N/self.COL)
         
-        if len(ps) == 1:
-            return ps[0][0]
-        ps = sorted(ps, key=lambda x: x[1], reverse=True)
-        if self.num_discs < 21 and ps[1][1] > 0:
-            for col, _ in ps[:2]:
-                row_idx = self.action_dict[col]-1
-                if row_idx % 2 == 0 and player == -1:
-                    return col
-                elif row_idx % 2 == 1 and player == 1:
-                    return col
-        
-        return ps[0][0]
+        ps = {i : np.mean(self.playouts(board, i, player, N = n)) for i in self.action_keys}
+        action = max(ps, key=ps.get)
+        return action
 
 if __name__ == "__main__":
     import time
-    a = PMCSAgent(15000)
+    ROW, COL = 6, 7 
+    a = FastPMCSAgent(15000)
     board = np.zeros((ROW, COL), dtype=np.int8)
     st = time.time()
     a.act(board, 1)
