@@ -5,7 +5,7 @@ import random
 
 
 class FastPMCSAgent:
-    def __init__(self, inc = 1000):
+    def __init__(self, inc = 1000, check_opponent_win=False):
         horizontal_kernel = np.array([[1, 1, 1, 1]])
         vertical_kernel = np.transpose(horizontal_kernel)
         diag1_kernel = np.eye(4, dtype=np.uint8)
@@ -14,6 +14,8 @@ class FastPMCSAgent:
                                 vertical_kernel, diag1_kernel, diag2_kernel]
         self.inc = inc
         self.ROW, self.COL = 6, 7
+        self.cache = {}
+        self.check_opponent_win = check_opponent_win
             
     def playout(self, state, action, player = 1):
         """Perfrom a random playout starting with the given action on the given board 
@@ -44,7 +46,7 @@ class FastPMCSAgent:
                         if ((a == -4).any()):
                             u = 1 if player == -1 else -1
                             break
-                        self.cache[state_bytes] = u
+                    self.cache[state_bytes] = u
     
                 if u != 0 or num_discs == 42:
                     return u
@@ -68,14 +70,12 @@ class FastPMCSAgent:
         The N playouts are evenly divided between the possible actions."""
         
         self.num_discs = len(np.where(board != 0)[0])
-        if self.num_discs <= 1:
-            self.cache = {} # reset at each game starts
+        # if self.num_discs <= 1:
+        #     self.cache = {} # reset at each game starts
     
         if self.num_discs == 0:
             return 3
-        
-        N = (self.num_discs+1) * self.inc
-        
+
         self.action_dict = {}
         for col in range(self.COL):
             num_zeros = len(np.where(board[:, col] == 0)[0])
@@ -84,11 +84,30 @@ class FastPMCSAgent:
             self.action_dict[col] = num_zeros
         self.action_keys = list(self.action_dict)
         
+        if self.check_opponent_win:
+            win_move = self.opponent_win_move(board, player)
+            if win_move != -1:
+                return win_move
+        
+        N = (self.num_discs+1) * self.inc
         n = math.floor(N/self.COL)
         
         ps = {i : np.mean(self.playouts(board, i, player, N = n)) for i in self.action_keys}
         action = max(ps, key=ps.get)
         return action
+    
+    def opponent_win_move(self, board, player):
+        opponent_player = -player
+        for a in self.action_keys:
+            new_board = board.copy()
+            new_board[self.action_dict[a]-1, a] = opponent_player
+
+            for kernel in self.detection_kernels:
+                convolved = convolve2d(new_board, kernel, mode='valid')
+                if ((convolved == 4*opponent_player).any()):
+                    return a
+    
+        return -1
 
 if __name__ == "__main__":
     import time
