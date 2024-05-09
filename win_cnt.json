@@ -1,1 +1,507 @@
-{"pmcs_agent": 6, "heurisitic_agent": 4}
+{
+    "win_cnt": {
+        "pmcs_agent2": 43,
+        "pmcs_agent": 55,
+        "draw": 2
+    },
+    "rounds": [
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 17.256550399964908,
+            "pmcs_agent2": 17.090325400000438
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 14.72354629993788,
+            "pmcs_agent": 14.43205620002118
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 17.064580900012515,
+            "pmcs_agent2": 19.229397199989762
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 14.572483100026147,
+            "pmcs_agent": 16.117474500002572
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 12.127018500032136,
+            "pmcs_agent2": 14.671462699974654
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 10.396907900023507,
+            "pmcs_agent": 12.766744600026868
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 20.344133999955375,
+            "pmcs_agent2": 21.75812479996239
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 17.646522700058995,
+            "pmcs_agent": 17.502397700038273
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 21.373732799926074,
+            "pmcs_agent2": 17.7992113000073
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 18.045037799922284,
+            "pmcs_agent": 16.708094400033588
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 23.57720510000945,
+            "pmcs_agent2": 23.67971269998816
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 15.320014400000218,
+            "pmcs_agent": 24.222337399958633
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 23.203098500001943,
+            "pmcs_agent2": 18.63511990007828
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 13.591481399955228,
+            "pmcs_agent": 19.50166670003091
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 11.967858699994395,
+            "pmcs_agent2": 13.838722199958283
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 20.17560629991931,
+            "pmcs_agent": 18.440978299971903
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 19.162772899959236,
+            "pmcs_agent2": 19.83273769999505
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 12.84681470002397,
+            "pmcs_agent": 19.914403299975675
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 23.283773799979826,
+            "pmcs_agent2": 17.040065299981507
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 26.075207400048384,
+            "pmcs_agent": 24.633584799914388
+        },
+        {
+            "pmcs_agent": 24.25827940000454,
+            "pmcs_agent2": 20.942070000019157
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 18.060363499971572,
+            "pmcs_agent": 12.41984690001118
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 9.201139999990119,
+            "pmcs_agent2": 11.886103800003184
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 15.376099600020098,
+            "pmcs_agent": 17.92666960004135
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 25.738133200007724,
+            "pmcs_agent2": 24.032389799976954
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 17.429069299978437,
+            "pmcs_agent": 21.652034400118282
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 20.214691699977266,
+            "pmcs_agent2": 18.91511379997246
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 14.036264299968025,
+            "pmcs_agent": 14.484067500045057
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 27.68710410001222,
+            "pmcs_agent2": 24.539590999949723
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 16.786649399931775,
+            "pmcs_agent": 16.08156799999415
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 21.534627100016223,
+            "pmcs_agent2": 19.092492800031323
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 8.039831400004914,
+            "pmcs_agent": 7.462801600020612
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 15.851310099940747,
+            "pmcs_agent2": 12.681227900000522
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 16.38797779995366,
+            "pmcs_agent": 20.047403499949723
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 18.360078000026988,
+            "pmcs_agent2": 19.08868149999762
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 13.489848700031871,
+            "pmcs_agent": 13.513081199896988
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 15.433740199980093,
+            "pmcs_agent2": 15.671610699937446
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 14.691051000059815,
+            "pmcs_agent": 13.944477899989579
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 24.909564700035844,
+            "pmcs_agent2": 22.951693199953297
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 16.342579800024396,
+            "pmcs_agent": 17.55550620003487
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 22.68419780000113,
+            "pmcs_agent2": 16.90186660006293
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 2.6048392999800853,
+            "pmcs_agent": 1.3787472000112757
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 15.556693699996686,
+            "pmcs_agent2": 12.221393300045747
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 17.396514199965168,
+            "pmcs_agent": 18.31107949995203
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 21.550716100085992,
+            "pmcs_agent2": 24.13848300007521
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 2.572475399938412,
+            "pmcs_agent": 1.4048118000500835
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 26.88266410009237,
+            "pmcs_agent2": 23.764369699987583
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 20.7118406999507,
+            "pmcs_agent": 18.12251209997339
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 14.02459600000293,
+            "pmcs_agent2": 11.33117630003835
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 17.816516499966383,
+            "pmcs_agent": 20.280272399948444
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 36.6919245000463,
+            "pmcs_agent2": 34.612016799947014
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 25.540189100051066,
+            "pmcs_agent": 26.036550500051817
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 30.66861409993726,
+            "pmcs_agent2": 26.472332300036214
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 15.62132279999787,
+            "pmcs_agent": 12.385048399999505
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 25.143521599966334,
+            "pmcs_agent2": 19.132792399992468
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 22.906727699999465,
+            "pmcs_agent": 19.13339570001699
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 22.647675399988657,
+            "pmcs_agent2": 16.523324800044065
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 19.568335399992066,
+            "pmcs_agent": 18.704851499962388
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 25.507714800012764,
+            "pmcs_agent2": 23.050044800009346
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 17.182036500016693,
+            "pmcs_agent": 16.435961599985603
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 30.802895800035913,
+            "pmcs_agent2": 29.04549080002471
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 15.155607399938162,
+            "pmcs_agent": 14.690613500017207
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 16.506420699995942,
+            "pmcs_agent2": 12.365699800051516
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 15.802117999934126,
+            "pmcs_agent": 16.457054999977117
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 25.92381419998128,
+            "pmcs_agent2": 14.01096680003684
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 19.104639300057897,
+            "pmcs_agent": 19.854195699997945
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 33.89746920001926,
+            "pmcs_agent2": 30.3075428000011
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 22.3848157999455,
+            "pmcs_agent": 24.796145899978
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 38.322929000045406,
+            "pmcs_agent2": 34.84519620001083
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 18.866793199966196,
+            "pmcs_agent": 14.513299200014444
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 18.328826199955074,
+            "pmcs_agent2": 15.319253199966624
+        },
+        {
+            "pmcs_agent2": 22.219623200013302,
+            "pmcs_agent": 33.27440599995316
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 36.498966600047424,
+            "pmcs_agent2": 33.82840200001374
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 5.179080400033854,
+            "pmcs_agent": 1.8847936000383925
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 36.47937669995008,
+            "pmcs_agent2": 32.14622869997402
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 34.8094878999982,
+            "pmcs_agent": 32.32143620005809
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 26.247555000009015,
+            "pmcs_agent2": 18.40570629996364
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 17.6950860999641,
+            "pmcs_agent": 24.174092399975052
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 21.541842899867333,
+            "pmcs_agent2": 27.893961000052514
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 35.16656400001375,
+            "pmcs_agent": 30.384955800051102
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 23.32091240005684,
+            "pmcs_agent2": 19.524356199952308
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 29.260305000003427,
+            "pmcs_agent": 23.104741299932357
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 20.787826199957635,
+            "pmcs_agent2": 15.403505499998573
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 23.773470099898987,
+            "pmcs_agent": 20.565012899955036
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 25.626156900048954,
+            "pmcs_agent2": 19.350342099991394
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 22.245828100014478,
+            "pmcs_agent": 22.409701999946265
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 21.27935199989588,
+            "pmcs_agent2": 23.81940750000649
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 19.746279699960724,
+            "pmcs_agent": 17.48286110002664
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 11.810242399951676,
+            "pmcs_agent2": 12.646896899968851
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 19.109803400060628,
+            "pmcs_agent": 18.918709299963666
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 23.010215400048764,
+            "pmcs_agent2": 16.782502200017916
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 27.65205299993977,
+            "pmcs_agent": 33.62405229991418
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 29.681227900000522,
+            "pmcs_agent2": 26.98694990001968
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 30.51213050005026,
+            "pmcs_agent": 23.707469600019976
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 14.547690900071757,
+            "pmcs_agent2": 16.004084800108103
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent2": 24.833668099949136,
+            "pmcs_agent": 22.36061020003399
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent": 30.876583799981745,
+            "pmcs_agent2": 29.449020699976245
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 14.6240765999828,
+            "pmcs_agent": 15.442398300016066
+        },
+        {
+            "winner": "pmcs_agent",
+            "pmcs_agent": 14.31105999997817,
+            "pmcs_agent2": 11.23984120003297
+        },
+        {
+            "winner": "pmcs_agent2",
+            "pmcs_agent2": 32.08585869992385,
+            "pmcs_agent": 24.17024209993542
+        }
+    ]
+}

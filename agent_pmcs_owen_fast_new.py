@@ -4,7 +4,7 @@ from scipy.signal import convolve2d
 import random
 
 class FastPMCSAgent:
-    def __init__(self, inc = 1000, check_opponent_win=True, huristic = True, clear_cache=False):
+    def __init__(self, inc = 1000, check_opponent_win=True, huristic = True):
         horizontal_kernel = np.array([[1, 1, 1, 1]])
         vertical_kernel = np.transpose(horizontal_kernel)
         diag1_kernel = np.eye(4, dtype=np.uint8)
@@ -16,7 +16,6 @@ class FastPMCSAgent:
         self.hurisitc = huristic
         self.ROW, self.COL = 6, 7
         self.cache = {}
-        self.clear_cache=clear_cache
         self.check_opponent_win = check_opponent_win
             
     def playout(self, state, action, player = 1):
@@ -41,14 +40,15 @@ class FastPMCSAgent:
                     for kernel in self.detection_kernels:
                         a = convolve2d(state, kernel, mode='valid')
                         if ((a == 4).any()):
-                            u = player
+                            u = 1
                             break
                         if ((a == -4).any()):
-                            u = -player
+                            u = -1
                             break
                     self.cache[state_bytes] = u
 
                 if u != 0 or num_discs == 42:
+                    u *= player
                     if u == 1 and self.hurisitc:
                         u += self.hurisitc_score(state, player)
                     return u
@@ -72,12 +72,12 @@ class FastPMCSAgent:
         The N playouts are evenly divided between the possible actions."""
         
         self.num_discs = len(np.where(board != 0)[0])
-        if self.clear_cache and self.num_discs <= 1:
-            self.cache = {} # reset at each game starts
+        # if self.clear_cache and self.num_discs <= 1:
+        #     self.cache = {} # reset at each game starts
     
         if self.num_discs == 0:
             return 3
-
+        
         self.action_dict = {}
         for col in range(self.COL):
             num_zeros = len(np.where(board[:, col] == 0)[0])
@@ -86,11 +86,11 @@ class FastPMCSAgent:
             self.action_dict[col] = num_zeros
         self.action_keys = list(self.action_dict)
         
-        if self.check_opponent_win:
+        if self.num_discs >= 6 and self.check_opponent_win:
             win_move = self.opponent_win_move(board, player)
             if win_move != -1:
                 return win_move
-
+        
         N = (self.num_discs+1) * self.inc
         n = math.floor(N/self.COL)
         
