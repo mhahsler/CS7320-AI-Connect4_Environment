@@ -9,8 +9,8 @@ class FastPMCSAgent:
         vertical_kernel = np.transpose(horizontal_kernel)
         diag1_kernel = np.eye(4, dtype=np.uint8)
         diag2_kernel = np.fliplr(diag1_kernel)
-        self.detection_kernels = [horizontal_kernel, vertical_kernel, 
-                                  diag1_kernel, diag2_kernel]
+        self.detection_kernels = [horizontal_kernel,
+                                vertical_kernel, diag1_kernel, diag2_kernel]
         
         self.inc = inc
         self.hurisitc = huristic
@@ -18,7 +18,7 @@ class FastPMCSAgent:
         self.cache = {}
         self.clear_cache=clear_cache
         self.check_opponent_win = check_opponent_win
-
+            
     def playout(self, state, action, player = 1):
         """Perfrom a random playout starting with the given action on the given board 
         and return the utility of the finished game."""
@@ -108,6 +108,7 @@ class FastPMCSAgent:
                 convolved = convolve2d(new_board, kernel, mode='valid')
                 if ((convolved == 4*opponent_player).any()):
                     return a
+    
         return -1
     
     def hurisitc_score(self, board, player):
@@ -121,4 +122,12 @@ class FastPMCSAgent:
         return score
 
 if __name__ == "__main__":
-    pass
+    import time
+    ROW, COL = 6, 7 
+    a = FastPMCSAgent(15000)
+    board = np.zeros((ROW, COL), dtype=np.int8)
+    st = time.time()
+    a.act(board, 1)
+    ut = time.time() - st
+    print(ut)
+    # 1 odd -1 even

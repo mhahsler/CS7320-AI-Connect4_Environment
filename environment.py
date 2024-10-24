@@ -50,6 +50,7 @@ class HelperFunctions:
 
     @staticmethod
     def check_win(board):
+        # check for win/loss
         horizontal_kernel = np.array([[1, 1, 1, 1]])
         vertical_kernel = np.transpose(horizontal_kernel)
         diag1_kernel = np.eye(4, dtype=np.uint8)
@@ -64,9 +65,10 @@ class HelperFunctions:
             if ((a == -4).any()):
                 return -1
 
+        # check for draw
         if (len(HelperFunctions.get_valid_moves(board)) == 0):
             return 0
-        
+
         return None
 
     @staticmethod
